@@ -104,12 +104,82 @@ class Results(Page):
     pass
 ```
 
-## Data Collection
 
-- Where the data gets stored and how to access it.
-- A quick look at the admin interface for monitoring the experiment.
 
-## Exercise
+## Reminder: Three Components for oTree Page
 
-- Participants get to modify the game or add additional features.
+To show a page in oTree, you need three components:
+
+1. **Class Definition**: Define a Python class corresponding to the page.
+   - Example: `class Decision(Page): pass`
+  
+2. **Page Sequence**: Add this class to `page_sequence` in `__init__.py`.
+  
+3. **HTML File**: Create an HTML file with the corresponding name (e.g., `Decision.html`).
+   - Tip: Copy-paste the pre-defined `MyPage.html` and rename it to `Decision.html`.
+
+
+
+## Getting Player's Contribution: Decision Page
+
+### In `pages.py`:
+
+```python
+class Decision(Page):
+    form_model = 'player'
+    form_fields = ['contribution']
+```
+
+### In `Decision.html`:
+
+```html
+    <h1>Make your contribution</h1>
+    {{ formfields }}
+```
+
+- `form_model = 'player'`: Specifies that we are using the `Player` model defined in `models.py`.
+- `form_fields = ['contribution']`: The field(s) we want to collect from the player.
+- `{{ formfields }}` in HTML: Renders the form fields in the template.
+
+
+## Setting Payoffs (ResultsWaitPage)
+
+In `ResultsWaitPage`, we define a method `after_all_players_arrive` to calculate payoffs.
+\scriptsize
+```python
+
+def set_payoffs(group: Group):
+    num_players = C.PLAYERS_PER_GROUP
+    group.total_contribution = sum([p.contribution for p in group.get_players()])
+    group.individual_share = (group.total_contribution * C.MULTIPLIER) / num_players
+    for p in group.get_players():
+        p.payoff = p.endowment - p.contribution + group.individual_share
+
+
+
+class ResultsWaitPage(WaitPage):
+    after_all_players_arrive = 'set_payoffs'
+
+```
+
+
+## Showing Results
+
+To display results, you will use variables in your HTML file as follows:
+
+- **Player's Endowment**: `{{ C.ENDOWMENT }}`
+- **Player's Contribution**: `{{ player.contribution }}`
+- **Other's Contributions**: 
+  ```
+  {{for p in player.get_others_in_group }}
+    {{ p.contribution }}
+  {{ endfor }}
+  ```
+- **Group Total Contribution**: `{{ group.total_contribution }}`
+- **Final Payoff**: `{{ player.payoff }}`
+
+
+
+
+
 
