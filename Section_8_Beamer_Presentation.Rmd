@@ -1,0 +1,33 @@
+---
+title: "Workshop: Section 8 - Randomization and Template Variables"
+output: 
+  beamer_presentation:
+    theme: "CambridgeUS"
+    pandoc_args:  "./common_settings.yaml"
+
+---
+
+## Introduction to Randomization
+
+- Why randomization is important in behavioral experiments.
+- Different methods of randomizing participants, treatments, etc.
+
+## Implementing Randomization in oTree
+
+- How to use Python's random library within oTree.
+- Examples of random assignment of treatments or roles.
+
+## Using Variables in Templates
+
+- How to dynamically display content in HTML templates using oTree's context variables.
+- Introduction to basic Jinja2 template syntax for conditionals and loops.
+
+## JavaScript in Templates
+
+- Brief overview of incorporating JavaScript for more dynamic user experiences.
+- Examples of simple JavaScript functions and how to link them with oTree variables.
+
+## Exercise
+
+- Participants will implement randomization in a simple game and use variables in templates.
+

@@ -1,0 +1,194 @@
+---
+title: "Workshop: Section 3 - Introduction to Python: Part 1"
+output: 
+  beamer_presentation:
+    theme: "CambridgeUS"
+    pandoc_args:  "./common_settings.yaml"
+
+---
+
+
+## How to Run Python Code
+
+
+- Using the script file
+- Built-in terminal in IDEs like PyCharm.
+- Google Colab.
+- Jupyter Lab.
+
+## Indentation
+
+In Python, indentation is used to define blocks of code. Unlike many other programming languages that use braces {} or other markers to indicate code blocks, Python relies on indentation levels to determine the scope of loops, functions, and other constructs.
+
+```
+for i in range(3):
+    print("Loop iteration")
+    print(i)
+print("Loop ended")
+```
+
+## More examples of code blocks: control structure `if-else`
+
+```
+if True:
+    print("This is true.")
+else:
+    print("This is false.")
+
+```
+
+
+## More examples of code blocks: loops 
+
+```python
+# For loop
+for i in range(3):
+    print(f"For loop iteration: {i}")
+
+# While loop
+count = 0
+while count < 3:
+    print(f"While loop iteration: {count}")
+    count += 1
+
+```
+
+
+ 
+ 
+
+## Variables and Data Types
+
+- **Variables**: Storage for values
+  - `x = 10`
+
+- **Naming**: Lowercase, underscores, start with a letter
+  - `my_var = 20`
+
+- **Data Types**:
+  - `int`: Whole numbers (`age = 30`)
+  - `float`: Decimal numbers (`height = 5.9`)
+  - `str`: Text (`name = "John"`)
+  - `bool`: True/False (`is_adult = True`)
+
+## Basic Operators
+
+- **Arithmetic**: Perform calculations
+  - `+`, `-`, `*`, `/`, `%`
+  - `5 + 2 = 7`, `10 % 3 = 1`
+
+- **Comparison**: Evaluate relations
+  - `==`, `!=`, `<`, `>`
+  - `5 == 5` (True), `5 > 2` (True)
+
+- **Logical**: Combine conditions
+  - `and`, `or`, `not`
+  - `True and False` (False), `not True` (False)
+
+---
+
+## Control Structures
+
+###
+- **Conditionals**: `if`, `elif`, `else`
+
+  ```python
+  if x > 0:
+      print("Positive")
+  elif x == 0:
+      print("Zero")
+  else:
+      print("Negative")
+```
+
+- **Logic**: Structure conditions
+  ```python
+  if x > 0 and y > 0:
+    print("Both Positive")
+
+  ```
+
+---
+
+### For Loops  
+
+- **Basic For Loop**: Iterate over a sequence
+  ```python
+  for i in range(3):
+      print(f"Basic loop iteration: {i}")
+  ```
+
+- **Iterating Over Lists**:
+  ```python
+  my_list = [1, 2, 3]
+  for item in my_list:
+      print(f"List item: {item}")
+  ```
+
+---
+
+### While Loops and Control Statements  
+
+- **Basic While Loop**: Repeat as long as condition is True
+  ```python
+  count = 3
+  while count > 0:
+      print(f"While loop count: {count}")
+      count -= 1
+  ```
+
+- **Control Statements**: `break`, `continue`
+  ```python
+  for i in range(5):
+      if i == 2:
+          break
+      print(f"Loop with break: {i}")
+  ```
+  ```python
+  for i in range(5):
+      if i == 2:
+          continue
+      print(f"Loop with continue: {i}")
+  ```
+
+
+---
+
+## Strings and f-strings
+
+- **String Basics**: Text enclosed in quotes
+  - `'Hello'`, `"World"`
+  
+- **String Concatenation**: Combining strings
+  - `'Hello' + ' ' + 'World'`
+  
+- **f-strings**: String formatting
+  ```python
+  name = 'Alice'
+  age = 30
+  print(f"{name} is {age} years old.")
+  # Dynamic Expressions: Include calculations
+  print(f"Five plus two equals {5 + 2}.")
+  ```
+  
+
+
+## Exercise
+
+### Task
+
+You are given a list of integers:
+
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+- Write a `for` loop to iterate through the list.
+- Use an `if` statement to check if the number is even or odd.
+- If the number is even, multiply it by 2.
+- If the number is odd, add 1 to it.
+- Print the resulting numbers.
+
+
+
+

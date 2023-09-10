@@ -1,0 +1,37 @@
+---
+title: "Workshop: Section 7 - oTree Data Analysis in R"
+output: 
+  beamer_presentation:
+    theme: "CambridgeUS"
+    pandoc_args:  "./common_settings.yaml"
+
+---
+
+## Introduction to R for Data Analysis
+
+- Brief overview of why R is a useful tool for data analysis, especially in the context of behavioral economics.
+
+## Data Import and Preprocessing
+
+- How to import oTree-generated CSV files into R.
+- Data cleaning and preparation steps.
+
+## Exploratory Data Analysis (EDA)
+
+- Basic techniques for exploring the dataset.
+- Visualizations using ggplot2.
+
+## Statistical Analysis
+
+- Introduction to basic statistical tests applicable to experimental data.
+- How to perform these tests in R.
+
+## Interpreting Results
+
+- How to interpret the output of statistical tests.
+- Discussion on the limitations and assumptions.
+
+## Exercise
+
+- A hands-on exercise where participants get to analyze a sample dataset.
+

@@ -1,0 +1,134 @@
+---
+title: "Workshop: Section 1 - Intro to oTree, Experiments in General, and oTree Interface"
+output: 
+  beamer_presentation:
+    theme: "CambridgeUS"
+    pandoc_args:  "./common_settings.yaml"
+---
+
+## Interactive Experiment
+
+<http://bit.ly/pisa-room>
+
+```{=tex}
+\begin{center}
+\includegraphics[height=2in]{./imgs/qrcode_room.png}
+\end{center}
+```
+## Downloading Data
+
+<http://bit.ly/otree-pisa>
+
+```{=tex}
+\begin{center}
+\includegraphics[height=2in]{./imgs/qrcode_main.png}
+\end{center}
+```
+## Interactivity in Experiments
+
+-   Interactivity: Real-time Strategical interdependence
+-   Note that most survey platforms like Qualtrics (\*), SurveyMonkey, and Survey.js do not support interactivity.
+-   Practical level of interdependence:
+    -   waiting for others
+    -   conditional matching
+    -   groups
+    -   roles
+    -   conditional flow
+
+## Introduction to oTree
+
+-   Python-based
+-   two main versions (3.x - Django based; 5.x - starlette based)
+-   there is a web-based version available (oTree Studio, <https://www.otreehub.com/studio/>)
+
+## oTree and some competitors
+
+-   oTree: [Website](https://www.otree.org/), [Documentation](https://otree.readthedocs.io/en/latest/), Citations: 1605
+-   SMARTRIQS [Website](https://smartriqs.com/) - Qualtrics-based interactive platform. Citations: 92
+-   z-Tree unleashed: [Website](https://cler1.gitlab.io/ztree-unleashed-doc), Citations: 62
+-   Lioness Lab: [Website](https://lioness-lab.org/), Citations: 91 in Google Scholar
+-   SophieLabs: [Website](https://www.sophielabs.com/)
+-   Gorilla: [Website](https://gorilla.sc/)
+-   For more options, check out the 'Apps and Integration' section on [Prolific](https://www.prolific.co/).
+
+## oTree as a Web Server
+
+-   A sequence of HTTP responses over GET and POST requests to server
+-   Python (3.8-3.11) at the backend; HTML+JS+\<template language\>at the front
+-   storing and retrieving data from the relational database (sqlite/postgres)
+-   CSS [Bootstrap](https://getbootstrap.com/) for quick formatting
+-   [jQuery](https://jquery.com/) for quick JavaScript code
+-   Usually mobile responsive
+
+## Shortcomings
+
+-   Pretty steep learning curve
+
+
+
+
+\begin{center}
+\includegraphics[height=2in]{./imgs/backend-vd-frontend.png}
+\end{center}
+
+-   Not so easy to deploy (Git+Linux shell)
+
+## Behavioral Experiments Overview
+
+-   What do we need:
+    -   Replicability (share your code on GitHub)
+    -   Random assignments to treatments
+    -   Re-use of the code across treatments (DRY - Do not Repeat Yourself)
+    -   Attention checks
+    -   Data validation
+    -   Some anti-hacker measures (no returning back)
+    -   Variable payoffs
+    -   Integration with crowdsourcing platforms
+
+## Randomization and Treatments
+
+-   We'll have a separate section tomorrow
+-   Important distinction:
+    -   within-session treatment assignment:
+
+        -   **PRO**: perfect balance, no time effects
+        -   **CONTRA**: sometimes not possible
+
+    -   between-session treatment assignment:
+
+        -   **PRO**: logistically easy
+        -   **CONTRA**: Never balanced; prone to criticism;
+
+        try to balance, or simultaneous rooms
+
+## Online Platforms Overview
+
+-   Since oTree is just a web-server, it can be easily integrated with most of the crowdsourcing platforms:
+
+    -   [Prolific](https://app.prolific.co/)
+
+    -   [Amazon Mechanical Turk (mTurk)](https://www.mturk.com/)
+
+    -   [CloudResearch](https://app.cloudresearch.com/)
+
+    -   [CloudResearch Connect](https://connect.cloudresearch.com/)
+
+    -   [BeSample](https://besample.app/)
+
+## Deployment and security
+
+-   Heroku, AWS, Digital Ocean
+
+-   Local servers (most likely Linux-bases like Ubuntu)
+
+Why locally?
+
+-   State legislation
+
+-   University regulations
+
+<!-- -->
+
+-   IRB
+
+What kind of deanonymizing information can be collected: IP addresses, agent info, etc.

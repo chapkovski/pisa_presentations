@@ -1,0 +1,33 @@
+---
+title: "Workshop: Section 6 - More Complex Structures: Roles, Matching"
+output: 
+  beamer_presentation:
+    theme: "CambridgeUS"
+    pandoc_args:  "./common_settings.yaml"
+
+---
+
+## Assigning Different Roles
+
+- Explanation of the concept of roles in economic games.
+- Steps to assign roles to players in oTree.
+- Code snippets to demonstrate role assignment.
+- How to conditionally show pages based on roles.
+
+## Multi-Round Games
+
+- Introduction to the idea of repeated games or rounds.
+- Steps to configure oTree for multiple rounds.
+- Code examples for implementing multi-round logic.
+- Tips on how to manage and reset variables between rounds.
+
+## Information Sharing
+
+- Overview of information sharing in the context of group experiments.
+- Methods for passing information between different members of a group.
+    - Using group-level variables.
+    - Using player-level variables.
+- Methods for sharing information between different apps within a single study.
+    - Using session-level variables.
+    - Code examples for sharing data between apps.
+
