@@ -34,7 +34,7 @@ output:
 
 ## Overall oTree data structure
 
-\scritpsize
+\scriptsize
 - **Session**: Top-level container for the entire experiment.
   - Consists of participants.
   - Contains a sequence of apps.
@@ -74,7 +74,7 @@ output:
 
 
 
-### Anatomy of an oTree Page
+## Anatomy of an oTree Page
 
 - An oTree page consists of several built-in methods that control its behavior and appearance.
 \scriptsize
