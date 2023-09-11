@@ -30,6 +30,30 @@ output:
 -   You can define new **fields** at Subession, Group, and Player level
 -  You can store the data in `vars` at Session and Participant levels
 
+
+
+## Overall oTree data structure
+
+\scritpsize
+- **Session**: Top-level container for the entire experiment.
+  - Consists of participants.
+  - Contains a sequence of apps.
+
+- **App**: A component of the session.
+  - Can have multiple rounds.
+  
+- **Round**: A single iteration within an app.
+  - Divides players into groups or one large group (if `players_per_group=None`).
+  - Includes all players in a subsession.
+
+- **Group**: A subset of players within a round.
+  
+- **Subsession**: A set of all players in the round.
+  
+- **Player**: Individual subject in a round.
+  - Each player has a corresponding **Participant**, which stays the same across all apps and rounds.
+  
+  
 ## Pages in oTree
 
 -   A page (in z-Tree term, screen) to show consists of 3 elements:
@@ -46,6 +70,47 @@ output:
   - CSS styles (look at the [Bootstrap docs](https://getbootstrap.com/) for details)
   - JavaScript
   - and oTree own (kinda) template language to render  at the server side (retrieving data)
+
+
+
+
+### Anatomy of an oTree Page
+
+- An oTree page consists of several built-in methods that control its behavior and appearance.
+\scriptsize
+#### Main Built-In Methods:
+
+- **`is_displayed`**: Determines if the page will be displayed.
+  ```python
+  def is_displayed(player):
+      return player.some_condition
+  ```
+
+- **`vars_for_template`**: Sends variables to HTML templates.
+  ```python
+  def vars_for_template(player):
+      return {'variable': player.some_variable}
+  ```
+
+- **`get_form_fields`**: Specifies form fields to be displayed.
+  ```python
+  form_model = 'player'
+  form_fields = ['some_field']
+  ```
+
+- **`before_next_page`**: Actions before moving to the next page.
+  ```python
+  def before_next_page(player):
+      player.calculate_something()
+  ```
+
+- **`js_vars`**: Sends variables to JavaScript in the template.
+  ```python
+  def js_vars(player):
+      return {'js_variable': player.some_variable}
+  ```
+
+
   
 
 ## Forms and User Input
